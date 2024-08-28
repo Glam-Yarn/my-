@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+/* Global styles */
+body {
+    background-color: #6719332a; /* Soft pink background */
+    color: #333; /* Dark text color */
+    font-family: 'Waltograph', cursive; /* Default font */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header styles */
+header {
+    background-color: #671933; /* Dark pink */
+    color: #d8a0b3; /* Light pink */
+    text-align: center;
+    padding: 10px; /* Reduced padding */
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* Main content area */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px; /* Reduced padding */
+}
+
+/* Product container styles */
+.product-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 420px; /* Reduced width */
+    margin: 0 auto;
+}
+
+/* Product details box */
+.product-details {
+    background-color: #fff; /* White background */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 6px; /* Reduced border radius */
+    padding: 15px; /* Reduced padding */
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1); /* Reduced shadow */
+    text-align: center;
+    width: 100%;
+    max-width: 280px; /* Reduced width */
+}
+
+.product-details img {
+    width: 100%;
+    height: auto;
+    border: 3px solid #6a1b2d; /* Dark pink border */
+    border-radius: 6px; /* Reduced border radius */
+}
+
+.product-details h2 {
+    margin: 8px 0; /* Reduced margin */
+    font-size: 1.0em; /* Reduced font size */
+    font-family: 'Pacifico', cursive; /* Pacifico font */
+    color: #2f463e; /* Dark greenish color */
+}
+
+.product-details p {
+    margin: 8px 0; /* Reduced margin */
+    font-size: 0.9em; /* Reduced font size */
+}
+
+.product-details form {
+    margin-top: 10px; /* Reduced margin */
+}
+
+.product-details form label {
+    display: block;
+    margin: 8px 0 4px; /* Reduced margin */
+    font-size: 0.9em; /* Reduced font size */
+}
+
+.product-details form input,
+.product-details form select {
+    width: 100%;
+    padding: 8px; /* Reduced padding */
+    border-radius: 3px; /* Reduced border radius */
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    font-size: 0.8em; /* Reduced font size */
+}
+
+.product-details form button {
+    background-color: #5d132b; /* Dark pink button */
+    color: white;
+    border: none;
+    padding: 8px 16px; /* Reduced padding */
+    border-radius: 3px; /* Reduced border radius */
+    cursor: pointer;
+    font-size: 0.9em; /* Reduced font size */
+}
+
+/* Bags header styles */
+.bags-header h1 {
+    font-family: 'Pacifico', cursive; /* Pacifico font */
+    font-size: 2em; /* Adjust size */
+    color: #671933; /* Dark pink */
+    text-align: center;
+    margin: 0;
+    padding: 10px 0; /* Adjust padding */
+}
+
+/* Footer styles */
+footer {
+    background-color: #6a1b2d; /* Dark pink */
+    text-align: center;
+    padding: 0px; /* Reduced padding */
+    color: #fbe8e8; /* Soft pink */
+    font-size: 0.5em; /* Reduced font size */
+}

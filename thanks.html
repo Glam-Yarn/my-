@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="thanks.css">
+    <title>Glam Yarn - Thank You</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Waltograph&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap');
+
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Waltograph', cursive;
+            background-color: #f9f7f8;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            align-items: center;
+            justify-content: center;
+            margin-top: 0; /* Reset default margin */
+        }
+
+        header {
+            background-color: #f5c6c6;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            font-family: 'Dancing Script', cursive;
+            color: #6a1b2d;
+            font-size: 28px;
+        }
+
+        main {
+            margin-top: 80px; /* Space for the fixed header */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            position: relative; /* Position relative for absolute children */
+        }
+
+        .thank-you-message {
+            text-align: center;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        .thank-you-message p {
+            color: #6a1b2d;
+            font-size: 18px;
+        }
+
+        .center-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 40px; /* Increased space between content and image */
+            position: relative; /* For positioning social links */
+        }
+
+        .center-image a {
+            display: block;
+        }
+
+        .center-image img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            margin-top: -20px; /* Move image up */
+        }
+
+        .center-image img:focus,
+        .center-image img:active {
+            border-color: #f5c6c6;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .social-links-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative; /* Ensure it moves with respect to other content */
+            margin-top: 60px; /* Increased space from the photo */
+            width: 100%;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px; /* Adjust font size */
+            margin: 0;
+        }
+
+        .social-links a {
+            margin: 0 15px;
+            text-align: center;
+            color: #6a1b2d;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #3e2b30; /* Darker shade on hover */
+        }
+
+        footer {
+            background-color: #6a1b2d;
+            text-align: center;
+            padding: 2px; /* Ultra-thin footer */
+            color: #f9f7f8;
+            font-size: 0.5em;
+            margin-top: auto;
+            width: 100%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Thank You!</h1>
+    </header>
+    
+    <main>
+        <section class="thank-you-message">
+            <p>Thank you for your purchase! Your order has been successfully completed.</p>
+            <p id="order-details"></p>
+            <p>We will contact you soon with the details of your order.</p>
+        </section>
+        
+        <!-- Centered Image -->
+        <div class="center-image">
+            <a href="index.html">
+                <img src="image/5935950472055735134.jpg" alt="Return to Home">
+            </a>
+        </div>
+
+        <!-- Social Links -->
+        <div class="social-links-container">
+            <div class="social-links">
+                <a href="https://www.instagram.com/accounts/edit/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://www.tiktok.com/@glam.yarn?_t=8pFGADZmW3x&_r=1" target="_blank" rel="noopener noreferrer">TikTok</a>
+                <a href="mailto:guerdsoumia607@gmail.com">Gmail</a>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Glam Yarn. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Retrieve the stored data from localStorage
+            const orderData = JSON.parse(localStorage.getItem('orderData'));
+
+            if (orderData) {
+                // Display the order data on the "Thank You" page
+                const orderDetails = `
+                    <p><strong>Name:</strong> ${orderData.name}</p>
+                    <p><strong>Phone:</strong> ${orderData.phone}</p>
+                    <p><strong>Article:</strong> ${orderData.articleName}</p>
+                    <p><strong>Price:</strong> ${orderData.price} DA</p>
+                    <p><strong>Location:</strong> ${orderData.location}</p>
+                    <p><strong>Payment Method:</strong> ${orderData.payment}</p>
+                `;
+
+                document.getElementById('order-details').innerHTML = orderDetails;
+
+                // Optionally, clear the stored data
+                localStorage.removeItem('orderData');
+            }
+        });
+    </script>
+</body>
+</html>

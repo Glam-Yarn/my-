@@ -1,0 +1,112 @@
+/* 1. Define consistent colors using CSS variables */
+:root {
+    --background-color: #e5d0da; /* Soft pink */
+    --header-background-color: #a78091; /* Soft pink header */
+    --header-text-color: #6a1b2d; /* Dark pink */
+    --category-border-color: #6a1b2d; /* Dark pink border */
+    --category-text-color: #6a1b2d; /* Dark pink text */
+    --footer-background-color: #6a1b2d; /* Dark pink */
+    --footer-text-color: #f9f7f8; /* Soft beige */
+}
+
+/* 2. Define the Waltograph font using @font-face */
+@font-face {
+    font-family: 'Waltograph';
+    src: url('fonts/Waltograph-Regular.woff2') format('woff2'),
+         url('fonts/Waltograph-Regular.woff') format('woff'),
+         url('fonts/Waltograph-Regular.ttf') format('truetype');
+}
+
+/* 3. Apply the font and colors consistently */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Waltograph', Arial, sans-serif; /* Added Arial and sans-serif as fallbacks */
+    font-size: 14px; /* Base font size */
+    background-color: var(--background-color);
+    color: #333; /* Dark text for contrast */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Header styles */
+header {
+    background-color: var(--header-background-color);
+    text-align: center;
+    padding: 8px; /* Smaller padding */
+}
+
+header h1 {
+    font-family: 'Waltograph', Arial, sans-serif; /* Disney-style font for header */
+    color: var(--header-text-color);
+    font-size: 28px; /* Font size for header */
+}
+
+/* Categories section styles */
+.categories {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.category {
+    text-align: center;
+    width: 30%;
+}
+
+.category img {
+    border-radius: 15px;
+    width: 100%;
+    height: auto;
+    transition: all 0.3s ease; /* Smooth transition for effects */
+}
+
+.category img:hover,
+.category img:focus,
+.category img:active {
+    border: 3px solid var(--category-border-color);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Shadow effect */
+}
+
+.category h2 {
+    color: var(--category-text-color);
+    margin-top: 10px;
+    font-size: 20px; /* Font size for category titles */
+}
+
+/* About Us section styles */
+.about-us p {
+    font-size: 12px; /* Smaller text for the body in About Us */
+    line-height: 1.5;
+}
+
+/* Footer styles */
+footer {
+    background-color: var(--footer-background-color);
+    text-align: center;
+    padding: 8px; /* Smaller padding */
+    color: var(--footer-text-color);
+    font-size: 10px; /* Smaller font size for footer text */
+    width: 100%; /* Full width */
+    position: relative;
+    bottom: 0;
+}
+
+/* 4. Use media queries to adjust styles for smaller devices */
+@media (max-width: 600px) {
+    html, body {
+        font-size: 16px; /* Adjust the font size for mobile devices */
+    }
+    header h1 {
+        font-size: 24px; /* Adjust the header font size for mobile devices */
+    }
+    .category h2 {
+        font-size: 18px; /* Adjust category title font size for mobile devices */
+    }
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RubyHug Scarf - Glam Yarn</title>
+    <link rel="stylesheet" href="product6.css">
+</head>
+<body>
+    <header>
+        <h1>RubyHug Scarf</h1>
+    </header>
+    <main>
+        <div class="product-details">
+            <img src="image/scarf5.jpg" alt="RubyHug Scarf">
+            <h2>RubyHug  </h2>
+            <p>1400 da</p>&nbsp;<hr>
+            <form id="order-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
+                
+                <label for="article-name">Article Name:</label>
+                <input type="text" id="article-name" name="article-name" value="RubyHug Scarf" readonly required>
+                
+                <label for="price">Price:</label>
+                <input type="number" id="price" name="price" value="1400" readonly required>
+                
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required>
+                
+                <label for="payment">Payment Method:</label>
+                <select id="payment" name="payment" required>
+                    <option value="domicile">Domicile</option>
+                    <option value="bureau">Bureau</option>
+                </select>
+                
+                <input type="hidden" name="product" value="RubyHug Scarf">
+                <button type="submit">Complete Purchase</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Glam Yarn. All rights reserved.</p>
+    </footer>
+    <script>
+        document.getElementById('order-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const formData = new FormData(this);
+            const data = {
+                name: formData.get('name'),
+                phone: formData.get('phone'),
+                articleName: formData.get('article-name'),
+                price: formData.get('price'),
+                location: formData.get('location'),
+                payment: formData.get('payment'),
+                product: formData.get('product') || 'BrownieHearts'
+            };
+
+            // Send data to Formspree using fetch API
+            fetch('https://formspree.io/f/mzzpynky', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(() => {
+                // Redirect to thank you page after form submission
+                window.location.href = 'thanks.html';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>

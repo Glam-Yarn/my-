@@ -1,0 +1,141 @@
+@font-face {
+    font-family: 'Waltograph';
+    src: url('fonts/Waltograph-Regular.woff2') format('woff2'),
+         url('fonts/Waltograph-Regular.woff') format('woff'),
+         url('fonts/Waltograph-Regular.ttf') format('truetype');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap'); /* Google Fonts for Pacifico */
+
+/* Global styles */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Waltograph', cursive, Arial, sans-serif; /* Font stack with fallback */
+    background-color: #f6dfea; /* Soft pink background */
+    color: #333; /* Dark text color */
+}
+
+/* Body layout */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Header styles */
+header {
+    background-color: #d2aeae; /* Soft pink header */
+    text-align: center;
+    padding: 8px; /* Reduced padding */
+}
+
+header h1 {
+    font-family: 'Waltograph', cursive, Arial, sans-serif; /* Disney-style font */
+    color: #6a1b2d; /* Dark pink */
+    font-size: 22px; /* Smaller font size */
+}
+
+/* Main content styles */
+main {
+    background-color: #f6dfea; /* Soft pink background */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Section styles */
+.sections {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center vertically */
+    min-height: 70vh; /* Adjust as needed */
+}
+
+.section {
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.section h2 {
+    font-family: 'Pacifico', cursive, Arial, sans-serif; /* Pacifico font */
+    color: #29382e; /* Dark greenish color */
+    font-size: 22px; /* Adjust as needed */
+}
+
+/* Products layout */
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* Individual product styles */
+.product {
+    text-align: center;
+    width: 30%;
+    margin-bottom: 20px;
+}
+
+.product img {
+    border-radius: 15px;
+    width: 100%;
+    height: auto;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.product img:hover,
+.product img:focus,
+.product img:active {
+    border: 2px solid #6a1b2d; /* Dark pink border */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Smaller shadow effect */
+}
+
+.product h3 {
+    color: #6a1b2d; /* Dark pink text color */
+    margin-top: 5px; /* Reduced margin */
+    font-size: 16px; /* Smaller font size */
+}
+
+.product p {
+    color: #6a1b2d; /* Dark pink text color */
+    margin-top: 2px; /* Reduced margin */
+    font-size: 12px; /* Smaller font size */
+}
+
+/* Footer styles */
+footer {
+    background-color: #6a1b2d; /* Dark pink */
+    text-align: center;
+    padding: 2px; /* Minimal padding */
+    color: #f9f7f8; /* Soft beige */
+    font-size: 8px; /* Very small font size */
+    width: 100%; /* Full width */
+    position: fixed;
+    bottom: 0;
+    border-top: 1px solid #f9f7f8; /* Thin border on top */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 20px; /* Adjusted font size for smaller screens */
+    }
+    .section h2 {
+        font-size: 18px; /* Adjusted font size for smaller screens */
+    }
+    .product h3 {
+        font-size: 14px; /* Adjusted font size for smaller screens */
+    }
+    .product p {
+        font-size: 10px; /* Adjusted font size for smaller screens */
+    }
+    footer {
+        font-size: 10px; /* Adjusted font size for smaller screens */
+    }
+}
